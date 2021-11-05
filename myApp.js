@@ -9,6 +9,6 @@ app.get("/", function (req, res) {
   res.sendFile(indexPath);
 });
 
-app.get("/public", express.static(__dirname + "/public"));
+app.use("/public", express.static(__dirname + "/public"));
 
 module.exports = app;
