@@ -10,6 +10,6 @@ app.get("/", function (req, res) {
   res.sendFile(indexPath);
 });
 
-app.get("/public", express.static(cssPath));
+app.get("/", express.static(cssPath));
 
 module.exports = app;
