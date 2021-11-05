@@ -4,12 +4,11 @@ var app = express();
 console.log("Hello World");
 
 const indexPath = __dirname + "/views/index.html";
-const cssPath = __dirname + "/public";
 
 app.get("/", function (req, res) {
   res.sendFile(indexPath);
 });
 
-app.get("/public", express.static(cssPath));
+app.get("/public", express.static(__dirname + "/public"));
 
 module.exports = app;
