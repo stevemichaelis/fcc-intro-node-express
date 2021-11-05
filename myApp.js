@@ -11,9 +11,10 @@ app.get("/", function (req, res) {
 
 app.use("/public", express.static(__dirname + "/public"));
 
-app.get("/json", function (res, req) => {
-  res.json({
-    message: "Hello json"
+app.get("/json", (req, res) => {
+    res.json({
+      message: "Hello json"
+    });
   });
-});
+
 module.exports = app;
