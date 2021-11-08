@@ -2,7 +2,13 @@ require("dotenv").config();
 var express = require("express");
 var app = express();
 
+app.use(function(req, res, next){
+  console.log(req.method + ' ' + req.path + ' - ' + req.ip);
+  next();
+});
+
 console.log("Hello World");
+
 
 const indexPath = __dirname + "/views/index.html";
 
@@ -23,5 +29,7 @@ app.get("/json", (req, res) => {
     });
   }
 });
+
+
 
 module.exports = app;
